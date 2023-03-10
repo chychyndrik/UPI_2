@@ -12,6 +12,7 @@
     <Folder Include="MainBoard\" />
     <Folder Include="Builder\" />
     <Folder Include="Launcher\" />
+    <Folder Include="Styles\" />
   </ItemGroup>
 
 </Project>
