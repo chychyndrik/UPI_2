@@ -8,13 +8,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Images\background.png" />
+    <None Remove="Resources\Images\profile.png" />
+    <None Remove="Resources\Images\settings.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="MainBoard\" />
     <Folder Include="Builder\" />
-    <Folder Include="Launcher\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="4.11.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\background.png" />
+    <Resource Include="Resources\Images\profile.png" />
+    <Resource Include="Resources\Images\settings.png" />
   </ItemGroup>
 
   <ItemGroup>
