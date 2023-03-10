@@ -12,7 +12,12 @@
     <Folder Include="MainBoard\" />
     <Folder Include="Builder\" />
     <Folder Include="Launcher\" />
-    <Folder Include="Styles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Styles\1.txt">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
   </ItemGroup>
 
 </Project>
