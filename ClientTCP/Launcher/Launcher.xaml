@@ -67,6 +67,16 @@
 
                             </Button>
                         </Border>
+                        <Border Width="80" Height="80" CornerRadius="100" Background="Transparent" x:Name="borderExist" Visibility="Hidden">
+                            <Button  Style="{StaticResource Exist_Avatar}" Click="Update_Delete_Icons" >
+                                <Image x:Name="avatarExist" Stretch="UniformToFill" Loaded="Load_Avatar">
+                                    <Image.Clip>
+                                        <EllipseGeometry Center="40,40" RadiusX="40" RadiusY="40" />
+                                    </Image.Clip>
+                                </Image>
+                            </Button>
+                        </Border>
+
                     </Grid>
                     <Grid DockPanel.Dock="Top" HorizontalAlignment="Center">
                         <Border x:Name="UpdateImageButton" Visibility="Hidden">

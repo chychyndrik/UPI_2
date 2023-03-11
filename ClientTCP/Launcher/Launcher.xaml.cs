@@ -15,7 +15,6 @@ using System.Windows.Shapes;
 using System;
 using Microsoft.Win32;
 using System.IO;
-using System.Windows.Media.Imaging;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace ClientTCP.Launcher
@@ -86,36 +85,60 @@ namespace ClientTCP.Launcher
             Update_Picture.Visibility = Visibility.Visible;
             UpdateImageButton.Visibility = Visibility.Hidden;
             DeleteImageButton.Visibility = Visibility.Hidden;
+
             OpenFileDialog openDialog = new OpenFileDialog();
             openDialog.Filter = "Image files| *.bmp; *.jpg; *.png";
             openDialog.FilterIndex = 1;
 
-
-
-
+            var source = new BitmapImage();
             if (openDialog.ShowDialog() == true)
             {
-                using (FileStream stream = new FileStream(avatarFilePath, FileMode.Append))
+                using (FileStream stream = new FileStream(avatarFilePath, FileMode.Create))
                 {
                     var avatar = new BitmapImage(new Uri(openDialog.FileName));
+
                     var encoder = new PngBitmapEncoder();
                     encoder.Frames.Add(BitmapFrame.Create(avatar));
 
+
                     encoder.Save(stream);
-
-                    
                 }
-                avatarPicture.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + avatarFilePath, UriKind.Absolute));
 
+                source.BeginInit();
+                source.CacheOption = BitmapCacheOption.OnLoad;
+                source.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                source.UriSource = new Uri(AppDomain.CurrentDomain.BaseDirectory + avatarFilePath, UriKind.RelativeOrAbsolute);
+                source.EndInit();
+                avatarExist.Source = null;
+                avatarPicture.Source = source;
             }
         }
+
         private void Delete_Avatar_Button(object sender, RoutedEventArgs e)
         {
             UpdateImageButton.Visibility = Visibility.Hidden;
             DeleteImageButton.Visibility = Visibility.Hidden;
             Update_Picture.Visibility = Visibility.Hidden;
+
             avatarPicture.Source = null;
+            avatarExist.Source = null;
             File.Delete(avatarFilePath);
+
+        }
+        private void Load_Avatar(object sender, RoutedEventArgs e)
+        {
+            if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + avatarFilePath))
+            {
+                var source = new BitmapImage();
+                borderExist.Visibility = Visibility.Visible;
+
+                source.BeginInit();
+                source.CacheOption = BitmapCacheOption.OnLoad;
+                source.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                source.UriSource = new Uri(AppDomain.CurrentDomain.BaseDirectory + avatarFilePath, UriKind.RelativeOrAbsolute);
+                source.EndInit();
+                avatarExist.Source = source;
+            }
         }
     }
 }
