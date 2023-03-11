@@ -14,14 +14,15 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System;
 using Microsoft.Win32;
+using System.IO;
+using System.Windows.Media.Imaging;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ClientTCP.Launcher
 {
-    /// <summary>
-    /// Логика взаимодействия для Launcher.xaml
-    /// </summary>
     public partial class Launcher : Window
     {
+        private String avatarFilePath = @"Resources\avatarPicture.png";
         public Launcher()
         {
             InitializeComponent();
@@ -88,9 +89,23 @@ namespace ClientTCP.Launcher
             OpenFileDialog openDialog = new OpenFileDialog();
             openDialog.Filter = "Image files| *.bmp; *.jpg; *.png";
             openDialog.FilterIndex = 1;
+
+
+
+
             if (openDialog.ShowDialog() == true)
             {
-                avatarPicture.Source = new BitmapImage(new Uri(openDialog.FileName));
+                using (FileStream stream = new FileStream(avatarFilePath, FileMode.Append))
+                {
+                    var avatar = new BitmapImage(new Uri(openDialog.FileName));
+                    var encoder = new PngBitmapEncoder();
+                    encoder.Frames.Add(BitmapFrame.Create(avatar));
+
+                    encoder.Save(stream);
+
+                    
+                }
+                avatarPicture.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + avatarFilePath, UriKind.Absolute));
 
             }
         }
@@ -100,6 +115,7 @@ namespace ClientTCP.Launcher
             DeleteImageButton.Visibility = Visibility.Hidden;
             Update_Picture.Visibility = Visibility.Hidden;
             avatarPicture.Source = null;
+            File.Delete(avatarFilePath);
         }
     }
 }
