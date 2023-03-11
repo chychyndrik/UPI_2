@@ -9,8 +9,6 @@
 
   <ItemGroup>
     <None Remove="Resources\Images\background.png" />
-    <None Remove="Resources\Images\profile.png" />
-    <None Remove="Resources\Images\settings.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,8 +22,6 @@
 
   <ItemGroup>
     <Resource Include="Resources\Images\background.png" />
-    <Resource Include="Resources\Images\profile.png" />
-    <Resource Include="Resources\Images\settings.png" />
   </ItemGroup>
 
   <ItemGroup>
