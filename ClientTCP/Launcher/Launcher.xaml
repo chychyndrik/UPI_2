@@ -48,18 +48,38 @@
                 <DockPanel>
 
                     <!--Аватар-->
-                    <!--ДОБАВИТЬ ВОЗМОЖНОСТЬ МЕНЯТЬ ЧЕЛОВЕКУ АВАТАРКУ-->
-                    <Border Width="80" Height="80" CornerRadius="100" Background="#cbcbcb"
-                            DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="50 -30 0 0">
-                        <Border.Effect>
-                            <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity ="0.3"/>
-                        </Border.Effect>
-                        <Ellipse>
-                            <Ellipse.Fill>
-                                <ImageBrush x:Name="profileIcon" ImageSource="\Resources\Images\profile.png"/>
-                            </Ellipse.Fill>
-                        </Ellipse>
-                    </Border>
+                    <Grid Margin="50 -30 0 0" DockPanel.Dock="Top" HorizontalAlignment="Left">
+                        <Border Width="80" Height="80" CornerRadius="100" Background="#cbcbcb">
+                            <Border.Effect>
+                                <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity ="0.3"/>
+                            </Border.Effect>
+                            <Button Style="{StaticResource Add_Avatar}" Click="Update_Delete_Icons">
+                                <Icon:PackIconMaterial Kind="Account" Width="50" Height="50"/>
+                            </Button>
+                        </Border>
+                        <Border Width="80" Height="80" x:Name="Update_Picture" Visibility="Hidden">
+                            <Button Style="{StaticResource Update_Avatar}" Click="Update_Delete_Icons">
+                                <Image x:Name="avatarPicture" Stretch="UniformToFill">
+                                    <Image.Clip>
+                                        <EllipseGeometry Center="40,40" RadiusX="40" RadiusY="40" />
+                                    </Image.Clip>
+                                </Image>
+
+                            </Button>
+                        </Border>
+                    </Grid>
+                    <Grid DockPanel.Dock="Top" HorizontalAlignment="Center">
+                        <Border x:Name="UpdateImageButton" Visibility="Hidden">
+                            <Button Height="15" Width="15" Margin="90 -70 0 0" Style="{StaticResource UpdateDeleteButton}" Click="Update_Avatar_Button">
+                                <Icon:PackIconMaterial Kind="File" Width="10" Height="10"/>
+                            </Button>
+                        </Border>
+                        <Border x:Name="DeleteImageButton" Visibility="Hidden">
+                            <Button  Height="15" Width="15" Margin="90 -30 0 0" Style="{StaticResource UpdateDeleteButton}" Click="Delete_Avatar_Button">
+                                <Icon:PackIconMaterial Kind="Delete" Width="10" Height="10"/>
+                            </Button>
+                        </Border>
+                    </Grid>
 
                     <!--Логин пользователя-->
                     <!--ПОКА БОЛВАНКА, ПОТОМ ИМЯ КОНКРЕТНОГО ПОЛЬЗОВАТЕЛЯ-->
