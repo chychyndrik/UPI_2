@@ -84,10 +84,10 @@ namespace ClientTCP.Launcher
             }
 
         }
-        //TODO: сохранять и подгружать аватарку локально 
+
         private void Update_Avatar_Button(object sender, RoutedEventArgs e)
         {
-            Update_Picture.Visibility = Visibility.Visible;
+            //Update_Picture.Visibility = Visibility.Visible;
             UpdateImageButton.Visibility = Visibility.Hidden;
             DeleteImageButton.Visibility = Visibility.Hidden;
 
@@ -101,11 +101,8 @@ namespace ClientTCP.Launcher
                 using (FileStream stream = new FileStream(avatarFilePath, FileMode.Create))
                 {
                     var avatar = new BitmapImage(new Uri(openDialog.FileName));
-
                     var encoder = new PngBitmapEncoder();
                     encoder.Frames.Add(BitmapFrame.Create(avatar));
-
-
                     encoder.Save(stream);
                 }
 
@@ -116,6 +113,14 @@ namespace ClientTCP.Launcher
                 source.EndInit();
                 avatarExist.Source = null;
                 avatarPicture.Source = source;
+                if (source != null)
+                {
+                    Update_Picture.Visibility = Visibility.Visible;
+                }
+                else 
+                { 
+                    Update_Picture.Visibility = Visibility.Hidden; 
+                }
             }
         }
 
@@ -128,7 +133,6 @@ namespace ClientTCP.Launcher
             avatarPicture.Source = null;
             avatarExist.Source = null;
             File.Delete(avatarFilePath);
-
         }
         private void Load_Avatar(object sender, RoutedEventArgs e)
         {
