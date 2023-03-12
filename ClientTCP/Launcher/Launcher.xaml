@@ -130,7 +130,7 @@
                     <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity ="0.3"/>
                 </Border.Effect>
 
-                <Button Style="{StaticResource Upi_Button}" MouseLeftButtonDown="Upi_MouseLeftButtonDown">
+                <Button Style="{StaticResource Upi_Button}" Click="BoardOpenWindow">
                     <TextBlock Text="BOARD" Foreground="White" FontSize="40" FontFamily="Agency FB" FontWeight="Bold" TextAlignment="Center"/>
                 </Button>
             </Border>

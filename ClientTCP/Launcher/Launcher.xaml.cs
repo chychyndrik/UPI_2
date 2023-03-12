@@ -47,12 +47,12 @@ namespace ClientTCP.Launcher
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            
         }
 
-        private void Upi_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void BoardOpenWindow(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void Settings_Button(object sender, RoutedEventArgs e)
@@ -92,7 +92,6 @@ namespace ClientTCP.Launcher
 
         private void Update_Avatar_Button(object sender, RoutedEventArgs e)
         {
-            //Update_Picture.Visibility = Visibility.Visible;
             UpdateImageButton.Visibility = Visibility.Hidden;
             DeleteImageButton.Visibility = Visibility.Hidden;
 
