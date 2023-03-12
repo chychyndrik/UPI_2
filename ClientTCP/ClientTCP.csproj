@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <Folder Include="MainBoard\" />
-    <Folder Include="Builder\" />
   </ItemGroup>
 
   <ItemGroup>
