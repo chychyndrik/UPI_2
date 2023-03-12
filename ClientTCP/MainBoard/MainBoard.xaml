@@ -3,10 +3,38 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:local="clr-namespace:ClientTCP.MainBoard"
         mc:Ignorable="d"
-        Title="MainBoard" Height="450" Width="800">
-    <Grid>
+        Title="MainBoard" 
+        Height= "800" Width="500"
+        MaxWidth="500" MinWidth="500"
+        WindowStyle="None"
+        AllowsTransparency="True">
+    <Grid MouseDown="Border_MouseDown" Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="476"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
         
+        <Image Stretch="UniformToFill" Opacity ="0.85" Grid.ColumnSpan ="3" Grid.RowSpan ="3">
+            <Image.Source>
+                <BitmapImage UriSource="\Resources\Images\mainBoardBackground.jpg" Rotation="Rotate90"/>
+            </Image.Source>
+        </Image>
+        
+        <Button Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Style="{StaticResource exitButton}" Click="Exit_MainBoard">
+            <Icon:PackIconMaterial Kind="Close" Width="15" Height="15"/>
+        </Button>
+
+        <Button Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Margin="40 10" Style="{StaticResource exitButton}" Click="Minimize_MainBoard">
+            <Icon:PackIconMaterial Kind="Minus" Width="15" Height="15"/>
+        </Button>
     </Grid>
 </Window>

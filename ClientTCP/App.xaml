@@ -7,6 +7,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries >
                 <ResourceDictionary Source="\resources\styles\launcherstyles.xaml"/>
+                <ResourceDictionary Source="\resources\styles\mainboardstyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

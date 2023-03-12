@@ -23,5 +23,22 @@ namespace ClientTCP.MainBoard
         {
             InitializeComponent();
         }
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
+
+        private void Exit_MainBoard(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Minimize_MainBoard(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
     }
 }

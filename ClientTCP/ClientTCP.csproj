@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <None Remove="Resources\Images\background.png" />
+    <None Remove="Resources\Images\mainBoardBackground.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +23,7 @@
 
   <ItemGroup>
     <Resource Include="Resources\Images\background.png" />
+    <Resource Include="Resources\Images\mainBoardBackground.jpg" />
   </ItemGroup>
 
   <ItemGroup>
