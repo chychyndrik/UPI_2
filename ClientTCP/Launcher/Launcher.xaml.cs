@@ -86,7 +86,6 @@ namespace ClientTCP.Launcher
             {
                 UpdateImageButton.Visibility = Visibility.Hidden;
                 DeleteImageButton.Visibility = Visibility.Hidden;
-                Update_Picture.Visibility = Visibility.Hidden;
             }
 
         }
@@ -134,7 +133,7 @@ namespace ClientTCP.Launcher
             UpdateImageButton.Visibility = Visibility.Hidden;
             DeleteImageButton.Visibility = Visibility.Hidden;
             Update_Picture.Visibility = Visibility.Hidden;
-
+            borderExist.Visibility = Visibility.Hidden;
             avatarPicture.Source = null;
             avatarExist.Source = null;
             File.Delete(avatarFilePath);
@@ -145,7 +144,6 @@ namespace ClientTCP.Launcher
             {
                 var source = new BitmapImage();
                 borderExist.Visibility = Visibility.Visible;
-
                 source.BeginInit();
                 source.CacheOption = BitmapCacheOption.OnLoad;
                 source.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
