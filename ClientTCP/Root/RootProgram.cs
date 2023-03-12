@@ -9,7 +9,6 @@ namespace ClientTCP.Root
     internal class RootProgram
     {
         public static RootProgram rootObject;
-
         
         RootProgram()
         {
@@ -23,7 +22,5 @@ namespace ClientTCP.Root
             }
             return rootObject;
         }
-
-
     }
 }
