@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClientTCP.Root
 {
-    internal class RootProgram
+    public sealed class RootProgram
     {
         public static RootProgram rootObject;
 
@@ -22,6 +22,8 @@ namespace ClientTCP.Root
         RootProgram()
         {
         }
+
+
 
         public static RootProgram GetRoot()
         {

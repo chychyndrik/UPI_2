@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClientTCP.Root
 {
-    internal interface BlockObjectInterface
+    public interface BlockObjectInterface
     {
     }
 }

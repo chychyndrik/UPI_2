@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClientTCP.Root
 {
-    internal class Precet
+    public class Precet
     {
         public string Name { get; set; }
         public List<BlockObjectInterface> blocksOnPage { get; set; }
