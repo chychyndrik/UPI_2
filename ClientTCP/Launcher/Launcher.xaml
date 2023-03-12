@@ -4,13 +4,14 @@
         xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:ms="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Height="720" Width="1080" WindowStartupLocation="CenterScreen" WindowStyle="None"
-        AllowsTransparency="True" Background="Transparent">
+        AllowsTransparency="True" Background="Transparent"
+        ResizeMode="NoResize">
     <Border CornerRadius="30" MouseDown="Border_MouseDown" MouseLeftButtonDown="Border_MouseLeftButtonDown">
         <Border.Background>
             <ImageBrush x:Name="imageBack" ImageSource="\Resources\Images\background.png"  Stretch="Fill"/>
         </Border.Background>
 
-        <Grid x:Name="gridMenu">
+        <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition Width="*"/>
@@ -29,13 +30,10 @@
                 <RowDefinition Height="67"/>
             </Grid.RowDefinitions>
 
-
-
-
             <Button Grid.Row="0" Grid.Column="6" HorizontalAlignment="Right" Style="{StaticResource exitButton}" Click="Exit_from_Launcher">
                 <Icon:PackIconMaterial Kind="Close" Width="15" Height="15"/>
             </Button>
-            <Button Grid.Row="0" Grid.Column="6" HorizontalAlignment="Right" Margin="40 20" Style="{StaticResource exitButton}" Click="Minimize_from_Launcher">
+            <Button Grid.Row="0" Grid.Column="6" HorizontalAlignment="Right" Margin="40 20" Style="{StaticResource exitButton}" Click="Minimize_Launcher">
                 <Icon:PackIconMaterial Kind="Minus" Width="15" Height="15"/>
             </Button>
 

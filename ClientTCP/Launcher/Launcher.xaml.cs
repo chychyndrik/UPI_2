@@ -40,7 +40,7 @@ namespace ClientTCP.Launcher
             this.Close();
         }
 
-        private void Minimize_from_Launcher(object sender, RoutedEventArgs e)
+        private void Minimize_Launcher(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
         }
@@ -86,6 +86,7 @@ namespace ClientTCP.Launcher
             {
                 UpdateImageButton.Visibility = Visibility.Hidden;
                 DeleteImageButton.Visibility = Visibility.Hidden;
+                Update_Picture.Visibility = Visibility.Hidden;
             }
 
         }
