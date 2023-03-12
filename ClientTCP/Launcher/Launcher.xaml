@@ -38,6 +38,9 @@
             <Button Grid.Row="0" Grid.Column="6" HorizontalAlignment="Right" Style="{StaticResource exitButton}" Click="Exit_from_Launcher">
                 <Icon:PackIconMaterial Kind="Close" Width="15" Height="15"/>
             </Button>
+            <Button Grid.Row="0" Grid.Column="6" HorizontalAlignment="Right" Margin="40 20" Style="{StaticResource exitButton}" Click="Minimize_from_Launcher">
+                <Icon:PackIconMaterial Kind="Minus" Width="15" Height="15"/>
+            </Button>
 
             <!--Вертикальная вкладка с кнопками-->
             <Border Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" Style="{StaticResource leftMenu}">

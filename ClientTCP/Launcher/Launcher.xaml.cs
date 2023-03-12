@@ -40,6 +40,11 @@ namespace ClientTCP.Launcher
             this.Close();
         }
 
+        private void Minimize_from_Launcher(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
