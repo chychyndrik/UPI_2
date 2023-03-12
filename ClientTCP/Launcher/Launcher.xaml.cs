@@ -55,9 +55,14 @@ namespace ClientTCP.Launcher
 
         }
 
-        private void Settings_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void Settings_Button(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Home_Button(object sender, RoutedEventArgs e)
+        {
+            
         }
 
         private void Assets_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
