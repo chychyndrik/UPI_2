@@ -7,14 +7,14 @@
         xmlns:local="clr-namespace:ClientTCP.MainBoard"
         mc:Ignorable="d"
         Title="MainBoard" 
-        Height= "800" Width="500"
-        MaxWidth="500" MinWidth="500"
+        Height= "800" Width="574"
+        MaxWidth="574" MinWidth="574"
         WindowStyle="None"
         AllowsTransparency="True">
     <Grid MouseDown="Border_MouseDown" Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="476"/>
+            <ColumnDefinition Width="550"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
